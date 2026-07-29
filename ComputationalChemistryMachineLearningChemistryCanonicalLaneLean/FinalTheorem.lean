@@ -1,0 +1,16 @@
+import ComputationalChemistryMachineLearningChemistryCanonicalLaneLean.ForceFieldAdmissibleClass
+import ComputationalChemistryMachineLearningChemistryCanonicalLaneLean.QM9BridgeLemmas
+import ComputationalChemistryMachineLearningChemistryCanonicalLaneLean.MLPotentialGateLemmas
+
+namespace HautevilleHouse
+namespace ComputationalChemistryMachineLearningChemistryCanonicalLaneLean
+
+def ChemicalMLConstrainedClosure (A : AdmissibleClass) : Prop :=
+  qm9BridgeClosed A ∧ mlPotentialGateClosed A
+
+theorem chemical_ml_constrained_endgame (A : AdmissibleClass) :
+    ChemicalMLConstrainedClosure A := by
+  exact And.intro (qm9_bridge_from_admissible_class A) (ml_potential_gate_from_admissible_class A)
+
+end ComputationalChemistryMachineLearningChemistryCanonicalLaneLean
+end HautevilleHouse
